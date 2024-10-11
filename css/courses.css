@@ -1,0 +1,18 @@
+.main_courses{
+    position: relative;
+    top: 5rem;
+    margin-bottom: 10rem;
+}
+.course:nth-child(4) .course_icon{
+    background: var(--color-yellow);
+}
+.course:nth-child(5) .course_icon{
+    background: var(--color-violet);
+}
+/*================================== MEDIA QUIRE (TABLET)===============================*/
+@media screen and (max-width:1024px) {
+    .main_courses{
+        margin-bottom: 7rem;
+        padding: 1.5rem 0;
+    }
+}

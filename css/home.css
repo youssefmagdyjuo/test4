@@ -1,0 +1,423 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+}
+:root{
+    --main_bg:#0b171d;
+    --bg1:#122832;
+    --bg2:#1b3c4b;
+    --color-white:#fff;
+    --color-tomato:#FF6584;
+    --color-green:#1b953b;
+    --color-blue:#288ed3;
+    --color-yellow:#b0b930;
+    --color-violet:#ca60ca;
+    --color-nav2:#326f8c;
+    --color-black:#000;
+    --size-lg:80%;
+    --size-md:90%;
+    --size-sm:94%;
+    --transition:ease.5s ;
+}
+body{
+    background: var(--main_bg);
+    background-image: url('../imgs/bg_shap.png');
+    color: var(--color-white);
+    font-family: system-ui;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.7;
+}
+h1,h2,h3,h4,h5{
+    line-height: 1.2;
+}
+h1{
+    font-size: 2.7rem;
+    
+}
+h2{
+    font-size: 2rem;
+    
+}
+h3{
+    font-size: 1.6rem;
+    
+}
+h4{
+    
+    font-size: 1.3rem;
+}
+section{
+    padding: 3rem 0;
+}
+section h2{
+    text-align: center;
+    margin-bottom:4rem ;
+}
+.container{
+width: var(--size-lg);
+margin: 0 auto;
+}
+a{
+    color: var(--color-white);
+}
+.font_special{
+    font-family: 'Tangerine', serif;
+    font-size: 3rem;
+    margin-left: 0.2rem;
+}
+.btn{
+    padding: 1rem 2rem;;
+    background: var(--color-white);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    display: inline-block;
+    color: var(--color-black);
+    
+}
+.btn:hover{
+    border: 1px solid var(--color-white);
+    background: transparent;
+    color: var(--color-white);
+    
+}
+.btn_praimary{
+    color: var(--color-white);
+    background: var(--color-tomato);
+}
+img{
+    width: 100%;
+    object-fit: cover;
+}
+/* ======================== NAVBAR =========================== */
+nav{
+    width: 100%;
+    height: 5rem;
+    position: fixed;
+    background: transparent;
+    z-index: 11;
+    transition: var(--transition);
+    
+}
+.scroll_nav{
+    background: var(--color-nav2);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+
+}
+.nav_container{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    
+}
+.nav_container button{
+    display: none;
+    background: transparent;
+    color: var(--color-white);
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.nav_links_list{
+    display: flex;
+    gap: 4rem;
+}
+.nav_links_list li a{
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+.nav_links_list li a:hover{
+    text-shadow: 0 0 0.25rem cyan;
+}
+.page_active{
+text-shadow: 0 0 0.25rem cyan;
+}
+
+
+/* ======================== HEADER =========================== */
+.header{
+    position: relative;
+    top: 5rem;
+    height: fit-content;
+    overflow: hidden;
+    
+}
+.header_container{
+    display: grid;
+    grid-template-columns: 55% 45%;
+    align-items: center;
+    height: 100%;
+    gap: 2.5rem;
+    padding-bottom: 4rem;
+}
+
+.header_left p{
+    font-size: 1rem;
+    margin: 1.5rem 0;
+}
+.header_left h1 span{
+    font-size: 1.6rem;
+}
+/* ======================== COURSES =========================== */
+.courses{
+    background: var(--bg1);
+    height: 40vh;
+    margin-bottom: 8rem;
+}
+.courses_container{
+    display: grid;
+    grid-template-columns: 32% 68%;
+    gap: 4rem;
+}
+.courses_left p{
+    margin: 1.5rem 0;
+}
+.courses_right{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+}
+.course{
+    background: var(--bg2);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    border: 1px solid var(--bg2);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.course:hover{
+    background: transparent;
+    scale: 1.05;
+}
+.course:hover .course_icon{
+    animation: icon 2.5s infinite linear;
+    border: 5px solid var(--bg2);
+}
+@keyframes icon {
+    
+    0%{
+        transform: rotateY(0deg);
+    }
+    
+    25%{
+        transform: rotateY(90deg);
+    }
+    50%{
+        transform: rotateY(180deg);
+    }
+    75%{
+        transform: rotateY(270deg);
+        }
+        100%{
+            transform: rotateY(360deg);
+        }
+    }
+    .course:hover .course_btn{
+        bottom: 0;
+    }
+    .course_btn{
+        position: absolute;
+        bottom: -10rem;
+        left: 0;
+        padding: 1rem;
+    width: 100%;
+    border-radius: 0 0 1.5rem 1.5rem;
+    background: var(--color-white);
+    color: var(--color-black);
+    text-align: center;
+    transition: var(--transition);
+}
+.course h4{
+    margin: 1rem 0;
+}
+.course_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 1rem;
+    border-radius: 50%;
+    background: var(--color-green);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.course:nth-child(2) .course_icon{
+    background: var(--color-blue);
+}
+.course:nth-child(3) .course_icon{
+    background: var(--color-tomato);
+}
+
+/* ======================== FOOTER =========================== */
+footer{
+    background: var(--bg1);
+    padding: 1.5rem 0;
+}
+.up_footer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10rem;
+    padding: 0 0 3rem;
+}
+.up_footer h4{
+    margin-bottom: 1rem;
+}
+.up_footer p{
+    font-size: 0.9rem;
+}
+.footer_links a:hover{
+    text-decoration: underline;
+}
+.footer_social{
+    display: flex;
+    gap: 1.8rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+/*becouse type of font[Japan]*/
+.footer_column:nth-child(2),.footer_column:nth-child(3){
+    margin-top: 1.3rem;
+}
+.footer_column:nth-child(1) h4{
+    margin-bottom: 0.5rem;
+}
+.down_footer{
+    border-top: 1px solid var(--bg2);
+    padding-top: 1.5rem ;
+    text-align: center;
+}
+/*================================== MEDIA QUIRE (TABLET)===============================*/
+@media screen and (max-width:1024px) {
+    .container{
+        width: var(--size-md);
+    }
+    /* ======================== NAVBAR =========================== */
+    #btn_open_nav{
+        display: inline-block;
+    }
+    .nav_links_list{
+        flex-direction: column;
+        width: 18rem;
+        height: fit-content;
+        position: fixed;
+        top:5rem;
+        right: 5%;
+        gap: 0;
+        scale: 0;
+        transition: var(--transition);
+    }
+    .nav_links_list li{
+        width: 100%;
+        height: 5.5rem;
+    }
+    .nav_links_list li a{
+        box-shadow: -4rem 6rem 10rem rgba(0, 0, 0, 0.6);;
+        display: grid;
+        place-content: center;
+        width: 100%;
+        height: 100%;
+        background: var(--color-nav2);
+        transition: var(--transition);
+    }
+    .nav_links_list li a:hover{
+        background-color: var(--bg2);
+        border-bottom: none;
+    }
+    .nav_links_list li a{
+        font-weight: normal;
+        padding: 0;
+        border-radius: 0;
+    }
+    /* ======================== HEADER =========================== */
+    
+    .header_container{
+        grid-template-columns: 1fr 1fr;
+    }
+    .header_left p{
+        font-size: 0.9rem;
+    }
+    /* ======================== COURSES =========================== */
+    .courses{
+        height: fit-content;
+    }
+    .courses_container{
+        gap: 1.3rem;
+        grid-template-columns:40% 60%;
+        
+    }
+    .courses_left p{
+        font-size: 0.9rem;
+    }
+    .courses_right{
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+    .course{
+        padding: 1.4rem;
+    }
+    /* ======================== FOOTER =========================== */
+    .up_footer{
+        gap: 2rem;
+    }
+    .footer_column:nth-child(2){
+        margin-left: 5rem;
+    }
+}
+/*================================== MEDIA QUIRE (MOBILE)===============================*/
+@media screen and (max-width:600px) {
+    .container{
+        width: var(--size-sm);
+    }
+    /* ======================== NAVBAR =========================== */
+    .nav_links_list{
+        right: 3%;
+    }
+    /* ======================== HEADER =========================== */
+    .header{
+        height: fit-content;
+        padding: 2rem 0;
+    }
+    .header_container{
+        grid-template-columns: 1fr;
+    }
+    .header_left{
+        text-align: center;
+    }
+    /* ======================== COURSES =========================== */
+    .courses_container{
+        grid-template-columns: 1fr;
+    }
+    .courses_right{
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    /* ======================== FOOTER =========================== */
+    .up_footer{
+        grid-template-columns: 1fr ;
+        gap: 1rem;
+        padding: 0 0 1.2rem;
+
+    }
+    .footer_column{
+        text-align: center;
+    }
+    .footer_column:nth-child(2){
+        margin-left:0;
+    }
+    .footer_social{
+        justify-content: center;
+    }
+}
